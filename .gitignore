@@ -12,6 +12,8 @@ dist
 .env
 env.yaml
 
+.DS_Store
+
 # Credentials
 credentials/*
 
