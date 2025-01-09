@@ -1,0 +1,7 @@
+{
+  "dependencies": ["./pyproject.toml"],
+  "graphs": {
+    "paper_processor": "./packages/workflows/paper_scanner/v0/agent/__init__.py:paper_summarization_agent"
+  },
+  "python_version": "3.11"
+}

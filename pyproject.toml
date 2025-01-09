@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "papers_scanner"
+version = "0.1.0"
+description = "A tool to scan papers and extract information from them"
+authors = ["Gonzalo Alessandrelli"]
+readme = "README.md"
+package-mode = true
+packages = [{ include = "packages" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+pydantic = "^2.9.2"
+mypy = "^1.11.2"
+python-dotenv = "^1.0.1"
+langchain = "^0.3.1"
+google-cloud-aiplatform = "^1.68.0"
+langchain-google-vertexai = "^2.0.1"
+google-auth = "^2.35.0"
+langchain-google-genai = "^2.0.0"
+langchain-community = "^0.3.8"
+typing-extensions = "^4.12.2"
+marker-pdf = "^1.1.0"
+pdfplumber = "^0.11.5"
+langgraph = "^0.2.60"
+langgraph-cli = { extras = ["inmem"], version = "^0.1.65" }
+langgraph-api = "^0.0.15"
+streamlit = "^1.41.1"
+google-cloud-bigquery = "^3.27.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.2"
+pytest-asyncio = "0.18.3"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+paper_scanner_app = "scripts.start_paper_scanner_streamlit:main"

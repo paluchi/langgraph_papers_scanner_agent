@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+.pytest_cache
+.mypy_cache
+.langgraph_api
+__pycache__
+
+# Distribution / packaging
+dist
+
+# Environments
+.venv/
+.env
+env.yaml
+
+# Credentials
+credentials/*
+
+# Test logs
+tests/**/results/*
+
+# Testing mocks
+tests/mocks/*

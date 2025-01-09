@@ -1,0 +1,68 @@
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+**/__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# LangGraph API-specific files
+.langgraph_api/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.eggs/
+*.whl
+
+# Tests and results directories
+tests/
+results/
+
+# Virtual environment directories
+.venv/
+env/
+venv/
+ENV/
+.env
+env.yaml
+
+# Poetry-related files
+.cache/
+
+# Ignore coverage and testing-related files
+.coverage
+.tox/
+*.cover
+coverage.xml
+htmlcov/
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore system-specific files
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore temporary files created by tools
+*.bak
+*.tmp
+*.temp
+*.orig
+*.rej
+
+# App-specific directories and logs
+apps/*/__pycache__/
+apps/*/*.log
+
+# Testing mocks
+tests/mocks/*
+
