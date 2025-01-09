@@ -171,3 +171,25 @@ The application includes several utility scripts to manage different tasks:
 ```bash
 poetry run paper_scanner_app
 ```
+
+## Limitations and Known Issues
+
+- **Sequential Processing**: Chunks must be processed in order, with no parallel processing support.
+- **Processing Time**: As chunks are processed sequentially, it takes a significant amount of time.
+- **Error Recovery**: No retry mechanism or partial results saving on failure, besides LLM retries.
+- **Memory Constraints**: All chunks and findings must be held in memory.
+- **Processing Flow**: No ability to pause/resume or reprocess specific sections.
+- **Document Pre-Processor**: The pre-processor is not lightweight and relies on a hosted API in production.
+- **Environment Variables**: Environments are being loaded from the deployment command instead of a secrets manager.
+- **Service Account Files**: Service account files are stored in the Docker image (a **SUPER BAD PRACTICE**, apologies), instead of being securely loaded from a secrets store.
+- **Vertex AI Latency**: The process sometimes takes a lot of time due to an issue with Vertex AI, where the first request randomly takes up to 80 seconds.
+- **Docker Container Size**: The Docker container is unexpectedly large, weighing 13 GB when built for the `linux/amd64` platform.
+- **Streamlit Load Time**: The Streamlit app has a significant delay on its first load.
+
+---
+
+## Developer Notes
+
+I thoroughly enjoyed developing this challenge! While exploring solutions, I may have over-engineered some features, such as introducing a consolidation node or implemented a sophisticated PDF pre-processor, which might not have been strictly necessary.
+
+However, I hope this demonstrates my **curiosity**, **attention to detail**, and **commitment to creating thoughtful and scalable systems** rather than being mistaken for overengineering or poor practices. It has been a rewarding experience to creatively solve problems and enhance my understanding of such workflows.
